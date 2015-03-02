@@ -1,7 +1,15 @@
-FROM dockerfile/java:oracle-java8
-MAINTAINER Meir Wahnon
+FROM ubuntu:latest
+
+MAINTAINER Zach Young
+
+RUN apt-get update
+
+RUN apt-get install default-jre -y
+
+RUN apt-get install default-jdk -y
 
 RUN apt-get install maven -y
+
 ADD pom.xml /app/
 ADD src/ /app/src/
 WORKDIR /app/
