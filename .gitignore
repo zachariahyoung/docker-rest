@@ -18,3 +18,4 @@
 
 # System Files #
 .DS_Store
+/target/
