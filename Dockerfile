@@ -3,7 +3,9 @@ FROM dockerfile/java:oracle-java8
 MAINTAINER Zach Young
 
 RUN apt-get update
-RUN apt-get install maven
+
+RUN apt-get install maven3 -y
+
 ADD pom.xml /app/
 ADD src/ /app/src/
 WORKDIR /app/
