@@ -15,6 +15,8 @@ RUN ["mvn", "verify"]
 # Adding source, compile and package into a fat jar
 ADD src /code/src
 RUN ["mvn", "package"]
+RUN cp target/docker-rest.jar ../..
+WORKDIR /
 EXPOSE 8080
 
-CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "target/docker-rest.jar"]
+CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "docker-rest.jar"]
