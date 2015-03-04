@@ -17,7 +17,7 @@ ADD src /code/src
 RUN ["mvn", "package"]
 RUN cp target/docker-rest.jar ../..
 WORKDIR /
-RUN rm -rf code
+RUN rm -rf ../code
 EXPOSE 8080
 
 CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "docker-rest.jar"]
