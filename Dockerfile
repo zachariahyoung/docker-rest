@@ -24,4 +24,4 @@ RUN rm -rf ../../code
 WORKDIR /
 EXPOSE 8080
 
-CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "opt/docker-restdocker-rest.jar"]
+CMD ["java", "-Xms512m", "-Xmx1g", "-jar", "opt/docker-rest/docker-rest.jar"]
