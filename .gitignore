@@ -1,21 +1,25 @@
-# Compiled Code #
-*.class
-*/target/**
+# Operating System Files
 
-# Package Files #
-*.jar
-*.war
-*.ear
+*.DS_Store
+Thumbs.db
 
-# Log Files #
-*.log
+# Build Files #
 
-# IntelliJ Files #
-.idea
+bin
+target
+build/
+.gradle
+
+# Eclipse Project Files #
+
+.classpath
+.project
+.settings
+
+# IntelliJ IDEA Files #
+
 *.iml
 *.ipr
 *.iws
+*.idea
 
-# System Files #
-.DS_Store
-/target/
