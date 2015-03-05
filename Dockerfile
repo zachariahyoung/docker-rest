@@ -24,4 +24,4 @@ RUN rm -rf ../../code
 WORKDIR /
 EXPOSE 8080
 
-CMD ["java", "-Xms512m", "-Xmx1g", "-jar","-Dspring.data.mongodb.host=$MONGODB_PORT_27017_TCP_ADDR", "opt/docker-rest/docker-rest.jar"]
+CMD ["java", "-Xms512m", "-Xmx1g", "-jar","opt/docker-rest/docker-rest.jar"]
