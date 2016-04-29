@@ -1,6 +1,6 @@
 # docker-rest
 
-[![Build Status](https://travis-ci.org/lukecyca/travis-docker-example.png)](https://travis-ci.org/zachariahyoung/docker-rest)
+[![Build Status](https://travis-ci.org/zachariahyoung/docker-rest.svg?branch=master)](https://travis-ci.org/zachariahyoung/docker-rest)
 
   How to run the rest service.
 
