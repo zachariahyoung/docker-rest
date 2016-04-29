@@ -5,6 +5,9 @@ jdk:
 
 sudo: false
 
+services:
+  - docker
+
 cache:
   directories:
     - $HOME/.m2
