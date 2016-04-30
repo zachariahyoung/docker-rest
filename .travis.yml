@@ -1,16 +1,27 @@
+sudo: required
+
 language: java
 
 jdk:
   - oraclejdk8
 
-sudo: false
-
 services:
   - docker
+
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::7}
+    - DOCKER_IMAGE=$DOCKER_REGISTRY/$DOCKER_REPO
+
+before_install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
   
 after_success:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push zachariahyoung/docker-rest
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - docker tag $DOCKER_IMAGE:latest $DOCKER_IMAGE:$COMMIT
+  - docker tag $DOCKER_IMAGE:latest $DOCKER_IMAGE:$TAG
+  - docker push $DOCKER_IMAGE:$COMMIT
+  - docker push $DOCKER_IMAGE:$TAG
   
 cache:
   directories:
