@@ -1,0 +1,14 @@
+docker-rest-service:
+  image: zachariahyoung/docker-rest
+  ports:
+   - 8080:8080
+  depends_on:
+   - mongo
+  environment:
+   - SPRING_PROFILES_ACTIVE=docker
+   - DOCKER_IP=$DOCKER_IP
+mongo:
+  image: mongo:latest
+  ports:
+   - 27017:27017
+
