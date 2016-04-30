@@ -26,3 +26,6 @@ after_success:
 cache:
   directories:
     - $HOME/.m2
+    
+notifications:
+  slack: zandroid-team:wuNQtFn4nJrtUDqsWfjZDXb4    
